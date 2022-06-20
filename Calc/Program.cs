@@ -16,6 +16,7 @@ namespace Calc
             Console.Write("TRYCK PÅ 0 FÖR ATT AVSLUTA\t");
 
             int choice = Convert.ToInt32(Console.ReadLine());
+
             switch (choice)
             {
                 case 0:
@@ -26,6 +27,7 @@ namespace Calc
 
                 case 1:
                     Counter.Plussa();
+                    Menu.Menyn();
                     break;
 
                 case 2:
