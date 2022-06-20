@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppX", "ConsoleAppX\ConsoleAppX.csproj", "{9F8E9B14-D71D-40F8-ABC5-8ADF9DEBAA59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppX", "ConsoleAppX\ConsoleAppX.csproj", "{9F8E9B14-D71D-40F8-ABC5-8ADF9DEBAA59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "Calc\Calc.csproj", "{92273BA5-9BFF-4E5A-B841-266CD22398B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9F8E9B14-D71D-40F8-ABC5-8ADF9DEBAA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F8E9B14-D71D-40F8-ABC5-8ADF9DEBAA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F8E9B14-D71D-40F8-ABC5-8ADF9DEBAA59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92273BA5-9BFF-4E5A-B841-266CD22398B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92273BA5-9BFF-4E5A-B841-266CD22398B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92273BA5-9BFF-4E5A-B841-266CD22398B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92273BA5-9BFF-4E5A-B841-266CD22398B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

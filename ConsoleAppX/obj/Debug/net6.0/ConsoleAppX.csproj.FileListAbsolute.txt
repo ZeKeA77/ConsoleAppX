@@ -1,0 +1,15 @@
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\bin\Debug\net6.0\ConsoleAppX.exe
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\bin\Debug\net6.0\ConsoleAppX.deps.json
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\bin\Debug\net6.0\ConsoleAppX.runtimeconfig.json
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\bin\Debug\net6.0\ConsoleAppX.dll
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\bin\Debug\net6.0\ConsoleAppX.pdb
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\obj\Debug\net6.0\ConsoleAppX.csproj.AssemblyReference.cache
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\obj\Debug\net6.0\ConsoleAppX.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\obj\Debug\net6.0\ConsoleAppX.AssemblyInfoInputs.cache
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\obj\Debug\net6.0\ConsoleAppX.AssemblyInfo.cs
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\obj\Debug\net6.0\ConsoleAppX.csproj.CoreCompileInputs.cache
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\obj\Debug\net6.0\ConsoleAppX.dll
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\obj\Debug\net6.0\refint\ConsoleAppX.dll
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\obj\Debug\net6.0\ConsoleAppX.pdb
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\obj\Debug\net6.0\ConsoleAppX.genruntimeconfig.cache
+C:\Users\raulcobos\source\repos\ConsoleAppX\ConsoleAppX\obj\Debug\net6.0\ref\ConsoleAppX.dll
