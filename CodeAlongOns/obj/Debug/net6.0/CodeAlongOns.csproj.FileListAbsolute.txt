@@ -1,0 +1,15 @@
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\bin\Debug\net6.0\CodeAlongOns.exe
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\bin\Debug\net6.0\CodeAlongOns.deps.json
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\bin\Debug\net6.0\CodeAlongOns.runtimeconfig.json
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\bin\Debug\net6.0\CodeAlongOns.dll
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\bin\Debug\net6.0\CodeAlongOns.pdb
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\obj\Debug\net6.0\CodeAlongOns.csproj.AssemblyReference.cache
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\obj\Debug\net6.0\CodeAlongOns.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\obj\Debug\net6.0\CodeAlongOns.AssemblyInfoInputs.cache
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\obj\Debug\net6.0\CodeAlongOns.AssemblyInfo.cs
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\obj\Debug\net6.0\CodeAlongOns.csproj.CoreCompileInputs.cache
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\obj\Debug\net6.0\CodeAlongOns.dll
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\obj\Debug\net6.0\refint\CodeAlongOns.dll
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\obj\Debug\net6.0\CodeAlongOns.pdb
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\obj\Debug\net6.0\CodeAlongOns.genruntimeconfig.cache
+C:\Users\raulcobos\source\repos\ConsoleAppX\CodeAlongOns\obj\Debug\net6.0\ref\CodeAlongOns.dll
