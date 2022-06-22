@@ -1,8 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
+// Sjukt enkel kalkylator
 
 namespace Calc
 {
-    public class Menu
+    public class Calculator
     {
 
         static void Main()
@@ -14,58 +15,95 @@ namespace Calc
         {
             while (true)
             {
+                int numA;
+                int numB;
+
+                // Meny
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Miniräknare");
-                Console.WriteLine("Tryck 1 för addera");
-                Console.WriteLine("Tryck 2 för substrahera");
-                Console.WriteLine("Tryck 3 för dividera");
-                Console.WriteLine("Tryck 4 för multiplicera");
-                Console.Write("TRYCK PÅ 0 FÖR ATT AVSLUTA\t");
+                Console.WriteLine("1 för att + addera");
+                Console.WriteLine("2 för att - substrahera");
+                Console.WriteLine("3 för att / dividera");
+                Console.WriteLine("4 för att * multiplicera");
+                Console.Write("0 för att avsluta\t");
+                Console.ForegroundColor = ConsoleColor.Gray;
 
                 int choice = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("\nFörsta siffran:\t");
-                int numA = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Andra siffran:\t");
-                int numB = Convert.ToInt32(Console.ReadLine());
-
+                
                 switch (choice)
                 {
-                    case 0:
+                    case 0: // Avsluta
+
+                        Console.Clear();
                         Environment.Exit(0);
                         break;
 
-                    case 1:
+                    case 1: // Adderad
 
                         Console.Clear();
+
+                        Console.Write("\nFörsta siffran:\t");
+                        numA = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Andra siffran:\t");
+                        numB = Convert.ToInt32(Console.ReadLine());
+
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.WriteLine($"\n\t{numA} + {numB} blir: {Counter.Addera(numA, numB)}\n");
-                        break;
-
-                    case 2:
-
-                        Console.Clear();
-                        Console.WriteLine($"\n\t{numA} - {numB} blir: {Counter.Substrahera(numA, numB)}\n");
-                        break;
-
-                    case 3:
-
-                        Console.Clear();
-
-                        if (Counter.Dividera(numA, numB) == 0)
-                        {
-                            Console.WriteLine($"\n\t{numA} / {numB} returnerar ett nollvärde! Försök igen\n");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\n\t{numA} / {numB} blir: {Counter.Dividera(numA, numB)}\n");
-                        }
-
+                        Console.ForegroundColor = ConsoleColor.Gray;
                         
                         break;
 
-                    case 4:
+                    case 2: // Substrahera
 
                         Console.Clear();
+                        
+                        Console.Write("\nFörsta siffran:\t");
+                        numA = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Andra siffran:\t");
+                        numB = Convert.ToInt32(Console.ReadLine());
+
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine($"\n\t{numA} - {numB} blir: {Counter.Substrahera(numA, numB)}\n");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+
+                        break;
+
+                    case 3: // Dividera
+
+                        Console.Clear();
+
+                        Console.Write("\nFörsta siffran:\t");
+                        numA = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Andra siffran:\t");
+                        numB = Convert.ToInt32(Console.ReadLine());
+
+                        // Kolla efter nollvärde som svar
+                        if (Counter.Dividera(numA, numB) == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine($"\n\t{numA} / {numB} returnerar ett nollvärde! Försök igen\n");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.WriteLine($"\n\t{numA} / {numB} blir: {Counter.Dividera(numA, numB)}\n");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+
+                        break;
+
+                    case 4: // Multiplicera
+
+                        Console.Clear();
+
+                        Console.Write("\nFörsta siffran:\t");
+                        numA = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Andra siffran:\t");
+                        numB = Convert.ToInt32(Console.ReadLine());
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.WriteLine($"\n\t{numA} * {numB} blir: {Counter.Multiplicera(numA, numB)}\n");
+                        Console.ForegroundColor = ConsoleColor.Gray;
                         break;
 
                     default:
@@ -80,10 +118,10 @@ namespace Calc
         
     }
 
-    public class Counter
+   
+
+    public class Counter // Beräkningarna
     {
-
-
         public static int Addera(int numA, int numB)
         {
             int result = numA + numB;
