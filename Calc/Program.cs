@@ -82,33 +82,28 @@ namespace Calc
 
                         Console.Write("\n\n\t\tDu valde division:\n\n");
 
-                        Console.Write("\n\t\tDividera:\t");
-                        numA = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("\n\t\tMed:\t");
-                        numB = Convert.ToInt32(Console.ReadLine());
+                        
+                            Console.Write("\n\t\tDividera:\t");
+                            numA = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("\n\t\tMed:\t");
+                            numB = Convert.ToInt32(Console.ReadLine());
 
-                        try
-                        {
-                            if (Counter.Dividera(numA, numB) == 0)
-                            {
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine($"\n\t\t\t{numA}  dividerat med {numB} blir: 0\n");
-                                Console.ForegroundColor = ConsoleColor.Gray;
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                Console.WriteLine($"\n\t\t\t{numA} dividerat med {numB} blir: {Counter.Dividera(numA, numB)}\n");
-                                Console.ForegroundColor = ConsoleColor.Gray;
-                            }
-                        }
-                        catch (Exception)
+                        if (numA == 0 || numB == 0)
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine($"\n\t\t\t{numA} går inte att dividera med 0, testa igen!");
+                            Console.WriteLine($"\n\t\t\t{numA}  går inte att dividera med {numB} \n");
+                            Console.WriteLine("\t\t\tFörsök igen");
                             Console.ForegroundColor = ConsoleColor.Gray;
                         }
-                        
+                        else
+                        { 
+                        double result = (double)numA / (double)numB;
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"\n\t\t\t{numA}  dividerat med {numB} blir: {result}\n");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+
+
                         break;
                        
                     case 4: // Multiplicera
@@ -153,18 +148,11 @@ namespace Calc
             return result;
         }
 
-        public static int Dividera(int numA, int numB)
-        {
-            int result = numA / numB;
-            return result;
-            
-
-        }
-
-        public static int Multiplicera(int numA, int numB)
-        {
-            int result = numA * numB;
-            return result;
+       
+        public static int Multiplicera(double numA, double numB)
+        {   
+            double result = numA * numB;
+            return(int)result;
         }
 
     }
