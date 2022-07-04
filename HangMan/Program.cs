@@ -27,9 +27,8 @@ Console.ResetColor();
 while (antLiv <= 10)
 {
     Console.Write("Gissa här: ");
-    string? playerGuess = Console.ReadLine().ToLower();
-    sb.Append(playerGuess);
-    sb.Append("-");
+    string playerGuess = Console.ReadLine().ToLower();
+    
 
     foreach (string s in sb.ToString().Split(' '))
     {
@@ -52,6 +51,7 @@ while (antLiv <= 10)
 
             if (theWord.Contains(playerGuess))
             {
+                sb.Append(playerGuess);
                 Console.ForegroundColor = ConsoleColor.Green;
                 currentLettersGuessed.Add(playerGuess[0]);
                 Console.WriteLine($"\nBokstaven '{playerGuess}' finns!");
@@ -70,6 +70,19 @@ while (antLiv <= 10)
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
+                Boolean alreadyGuessed = sb.ToString().Contains(playerGuess);
+                if (alreadyGuessed)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine($"Du har redan använt {playerGuess}");
+                }
+                else
+                {
+                    antLiv--;
+                }
+
+                sb.Append(playerGuess);
+                Console.WriteLine();
                 Console.WriteLine($"\nFel! '{playerGuess}' finns inte, försök igen!");
                 Console.WriteLine($"Du har {antLiv} liv kvar!");
                 Gallows(antLiv);
@@ -77,9 +90,16 @@ while (antLiv <= 10)
                 Console.Write("\n");
                 Console.WriteLine(printArray);
                 Console.ResetColor();
-                antLiv--;
+
+                
+
+
+
+                
+
+
             }
-            
+
         }
     }
     else
@@ -101,6 +121,7 @@ while (antLiv <= 10)
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
+                sb.Append(playerGuess);
                 Console.WriteLine($"\n{playerGuess} är fel ord, försök igen!");
                 Console.WriteLine($"Du har {antLiv} liv kvar!");
                 currentLettersRight = PrintWord(currentLettersGuessed, theWord);
