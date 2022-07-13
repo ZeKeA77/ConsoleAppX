@@ -1,160 +1,126 @@
-﻿// See https://aka.ms/new-console-template for more information
-// Sjukt enkel kalkylator
+﻿using static Calc.Utilities;
 
-namespace Calc
+
+
+while (true)
 {
-    public class Calculator
+    int numA;
+    int numB;
+    int choice;
+    // Meny
+    do
     {
+        Menu();
+        choice = Convert.ToInt32(Console.ReadLine());
+        Console.Clear();
 
-        static void Main()
-        {
-            Menyn();
-        }
+    } while (choice != 0 && choice != 1 && choice != 2 && choice != 3 && choice != 4);
 
-        public static void Menyn()
-        {
-            while (true)
+    switch (choice)
+    {
+        case 0: // Avsluta  
+
+            Console.Clear();
+            Environment.Exit(0);
+            break;
+
+        case 1: // Adderad
+
+            Console.Clear();
+            Console.Write("\n\n\t\tDu valde addition:\n\n");
+
+            Console.Write("\n\t\tAddera:\t");
+
+            string tt = Console.ReadLine();
+            string[] ttNum = tt.Split(",");
+            List<int> nums = new List<int>();
+            int numx = 0;
+
+            Console.Write("\n\t\tMed:\t");
+            numB = Convert.ToInt32(Console.ReadLine());
+
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            foreach (string s in ttNum)
             {
-                int numA;
-                int numB;
-                int choice;
-                // Meny
-                do
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("\n\n\t\tMiniräknare\n");
-                    Console.WriteLine("\t\tTryck 1 för att + addera");
-                    Console.WriteLine("\t\tTryck 2 för att - substrahera");
-                    Console.WriteLine("\t\tTryck 3 för att / dividera");
-                    Console.WriteLine("\t\tTryck 4 för att * multiplicera");
-                    Console.Write("\t\tTryck 0 för att avsluta\t");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    choice = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
+                if (Int32.TryParse(s, out numx))
+                    nums.Add(numx);
+                Console.WriteLine($"\n\t\t\t{numx} plus {numB} blir: {Add(numx, numB)}\n");
+            }
+            Console.ForegroundColor = ConsoleColor.Gray;
 
-                } while (choice != 0 && choice != 1 && choice != 2 && choice != 3 && choice != 4);
+            break;
 
-                switch (choice)
-                {
-                    case 0: // Avsluta  
+        case 2: // Substrahera
 
-                        Console.Clear();
-                        Environment.Exit(0);
-                        break;
+            Console.Clear();
+            Console.Write("\n\n\t\tDu valde substraktion:\n\n");
+            Console.Write("\n\t\tSubstrahera:\t");
 
-                    case 1: // Adderad
+            string ttx = Console.ReadLine();
+            string[] ttNumb = ttx.Split(",");
+            List<int> numsb = new List<int>();
+            int numxb = 0;
 
-                        Console.Clear();
-                        
-                        Console.Write("\n\n\t\tDu valde addition:\n\n");
+            Console.Write("\n\t\tMed:\t");
+            numB = Convert.ToInt32(Console.ReadLine());
 
-                        Console.Write("\n\t\tAddera:\t");
-                        numA = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("\n\t\tMed:\t");
-                        numB = Convert.ToInt32(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            foreach (string s in ttNumb)
+            {
+                if (Int32.TryParse(s, out numxb))
+                    numsb.Add(numxb);
+                Console.WriteLine($"\n\t\t\t{numxb} minus {numB} blir: {Subtract(numxb, numB)}\n");
+            }
+            Console.ForegroundColor = ConsoleColor.Gray;
 
-                        Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        Console.WriteLine($"\n\t\t\t{numA} plus {numB} blir: {Counter.Addera(numA, numB)}\n");
-                        Console.ForegroundColor = ConsoleColor.Gray;
-                        
-                        break;
+            break;
 
-                    case 2: // Substrahera
+        case 3: // Dividera
 
-                        Console.Clear();
+            Console.Clear();
 
-                        Console.Write("\n\n\t\tDu valde substraktion:\n\n");
-
-                        Console.Write("\n\t\tSubstrahera:\t");
-                        numA = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("\n\t\tMed:\t");
-                        numB = Convert.ToInt32(Console.ReadLine());
-
-                        Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        Console.WriteLine($"\n\t\t\t{numA} minus {numB} blir: {Counter.Substrahera(numA, numB)}\n");
-                        Console.ForegroundColor = ConsoleColor.Gray;
-
-                        break;
-
-                    case 3: // Dividera
-
-                        Console.Clear();
-
-                        Console.Write("\n\n\t\tDu valde division:\n\n");
-
-                        
-                            Console.Write("\n\t\tDividera:\t");
-                            numA = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("\n\t\tMed:\t");
-                            numB = Convert.ToInt32(Console.ReadLine());
-
-                        if (numA == 0 || numB == 0)
-                        {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine($"\n\t\t\t{numA}  går inte att dividera med {numB} \n");
-                            Console.WriteLine("\t\t\tFörsök igen");
-                            Console.ForegroundColor = ConsoleColor.Gray;
-                        }
-                        else
-                        { 
-                        double result = (double)numA / (double)numB;
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine($"\n\t\t\t{numA}  dividerat med {numB} blir: {result}\n");
-                        Console.ForegroundColor = ConsoleColor.Gray;
-                        }
+            Console.Write("\n\n\t\tDu valde division:\n\n");
 
 
-                        break;
-                       
-                    case 4: // Multiplicera
+            Console.Write("\n\t\tDividera:\t");
+            numA = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\n\t\tMed:\t");
+            numB = Convert.ToInt32(Console.ReadLine());
 
-                        Console.Clear();
-
-                        Console.Write("\n\n\t\tDu valde multiplikation:\n\n");
-
-                        Console.Write("\n\t\tMultiplicera:\t");
-                        numA = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("\n\t\tMed:\t");
-                        numB = Convert.ToInt32(Console.ReadLine());
-                        Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        Console.WriteLine($"\n\t\t\t{numA} * {numB} blir: {Counter.Multiplicera(numA, numB)}\n");
-                        Console.ForegroundColor = ConsoleColor.Gray;
-                        break;
-
-                    default:
-                        Console.Clear();
-                        break;
-                }
+            if (numA == 0 || numB == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"\n\t\t\t{numA}  går inte att dividera med {numB} \n");
+                Console.WriteLine("\t\t\tFörsök igen");
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"\n\t\t\t{numA}  dividerat med {numB} blir: {Divide(numA, numB)}\n");
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
 
-        }
 
-        
-    }
+            break;
 
-   
+        case 4: // Multiplicera
 
-    public class Counter // Beräkningarna
-    {
-        public static int Addera(int numA, int numB)
-        {
-            int result = numA + numB;
-            return result;
-        }
+            Console.Clear();
 
-        public static int Substrahera(int numA, int numB)
-        {
-            int result = numA - numB;
-            return result;
-        }
+            Console.Write("\n\n\t\tDu valde multiplikation:\n\n");
 
-       
-        public static int Multiplicera(double numA, double numB)
-        {   
-            double result = numA * numB;
-            return(int)result;
-        }
+            Console.Write("\n\t\tMultiplicera:\t");
+            numA = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\n\t\tMed:\t");
+            numB = Convert.ToInt32(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine($"\n\t\t\t{numA} * {numB} blir: {Multiply(numA, numB)}\n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            break;
 
+        default:
+            Console.Clear();
+            break;
     }
 }
-
