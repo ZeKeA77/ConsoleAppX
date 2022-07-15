@@ -5998,9 +5998,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\raulcobos\\source\\repos\\ConsoleAppX\\ConsoleAppXTests\\ConsoleAppXTests.csproj",
-      "projectName": "ConsoleAppXTests",
-      "projectPath": "C:\\Users\\raulcobos\\source\\repos\\ConsoleAppX\\ConsoleAppXTests\\ConsoleAppXTests.csproj",
+      "projectUniqueName": "C:\\Users\\raulcobos\\source\\repos\\ConsoleAppX\\ConsoleAppXTests\\Calc.Tests.csproj",
+      "projectName": "Calc.Tests",
+      "projectPath": "C:\\Users\\raulcobos\\source\\repos\\ConsoleAppX\\ConsoleAppXTests\\Calc.Tests.csproj",
       "packagesPath": "C:\\Users\\raulcobos\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\raulcobos\\source\\repos\\ConsoleAppX\\ConsoleAppXTests\\obj\\",
       "projectStyle": "PackageReference",
@@ -6071,7 +6071,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

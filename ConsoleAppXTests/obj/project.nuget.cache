@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CEqqJWsSGyARMORd+TLMZxqY5PF4tlsPMj9T3IsNZrqAeGx5tgOYPUdI6WVxW2Th0TFwImD3EqTmpo1SJaq7JQ==",
+  "dgSpecHash": "HL4pymQA2cVqUzCV3aIWdOLtwSZPDUibJb6FkM8nKuIeO+94w49xJVSTsrow2IiEhOW8Z3cHBhR89HdZokdC5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\raulcobos\\source\\repos\\ConsoleAppX\\ConsoleAppXTests\\ConsoleAppXTests.csproj",
+  "projectFilePath": "C:\\Users\\raulcobos\\source\\repos\\ConsoleAppX\\ConsoleAppXTests\\Calc.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\raulcobos\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\raulcobos\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
