@@ -1,0 +1,255 @@
+:root {
+    --bgColor: rgb(224, 215, 215);
+    --Colora: hsl(300, 50%, 7%);
+    --Colorb: hsl(232, 24%, 40%);
+    --Colorc: hsl(207, 57%, 65%);
+    --Colord: hsl(32, 13%, 71%);
+    --Colore: hsl(51, 22%, 76%);
+    --Colorf: hsl(33, 62%, 71%);
+    --ColorLinkb: hsl(141, 55%, 49%);
+    --ColorLinkr:hsl(0, 55%, 49%);
+    --ebgColor: hsl(100, 56%, 76%);
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--Colora);
+    font-size: 12px;
+    background-color: var(--bgColor);
+    border: 2px solid var(--Colord);
+    margin: 0 auto;
+    width: 1024px;
+    height: 100%;
+    
+        
+}
+
+#bodyMain{
+    display: grid;
+    grid-template-areas:
+    'nav nav nav'
+    'main main aside'
+    'footer footer footer';
+}
+
+#headline{
+    width: 40%;
+}
+
+
+
+header {grid-area: nav;}
+#main {grid-area: main;}
+aside { grid-area: aside; }
+footer { grid-area: footer; }
+
+.logo{
+    width: 46px;
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--Colorc);
+    
+}
+
+.logo:hover {
+    background-color: var(--Colorb);
+}
+
+p.bold{
+    font-weight: bold;
+    color: var(--Colorc);
+}
+
+header{
+    position: sticky;
+    top: 0px;
+}
+
+nav {
+    background-color: var(--Colore);
+    display: grid;
+    grid-template-columns: 48px auto 150px;
+    
+}
+
+
+nav>ul {
+    background-color: var(--Colorf);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav>ul>li {
+    border-right: 2px solid var(--Colord);
+    border-bottom: 2px solid var(--Colord);
+    text-align: center;
+    padding: 15px;
+}
+
+a:link, a:visited {
+    color: var(--Colora);
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+nav>ul>li:hover {
+    background-color: var(--Colorb);
+}
+
+.menuRight:hover {
+    background-color: var(--Colorb);
+}
+
+nav>div {
+    border-bottom: 2px solid var(--Colord);
+    padding-top: 15px;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
+aside {
+    background-color: var(--Colore);
+    border: 2px solid var(--Colord);
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+}
+
+img {
+    width: 250px;
+    padding: 0;
+}
+
+.pizza{
+    width: 150px;
+}
+
+a.homeLink:link {
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    border-right: 2px solid var(--Colord);
+    border-bottom: 2px solid var(--Colord);
+}
+a.homeLink:visited {
+    text-decoration: none;
+    border-right: 2px solid var(--Colord);
+    border-bottom: 2px solid var(--Colord);}
+a.homeLink:hover {text-decoration: none;}
+
+a.blueLink:link {color: var(--ColorLinkb);}
+a.blueLink:visited {color: var(--ColorLinkb);}
+a.blueLink:hover {color: var(--ColorLinkr)}
+
+a.redLink:link {color: var(--ColorLinkr);}
+a.redLink:visited {color: var(--ColorLinkr);}
+a.redLink:hover {color: var(--ColorLinkb);}
+
+div.sidelist{
+    width: 0px;
+    padding: 0px;
+    margin: 0px;border: 0px;
+}
+
+ol li{
+    margin-left: -20px;
+    text-align: left;
+}
+
+ol li ol {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#main {
+    border-right: 2px solid var(--Colord);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'headline headline'
+    'subtext subtext'
+    'article1 article2';
+}
+
+#main>div {
+    background-color: var(--Colore);
+    border: 2px solid var(--Colord);
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+#headline {grid-area: headline;}
+#subtext {grid-area: subtext;}
+#article1 {grid-area: article1;}
+#article2 {grid-area: article2;}
+
+#loginMain{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+#loginHead {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    background-color: var(--Colore);
+    border: 2px solid var(--Colord);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px;
+    margin: 15px;
+}
+
+#loginForm {
+    grid-column: 1 / 3;
+    grid-row: 2 / 2;
+    background-color: var(--Colore);
+    border: 2px solid var(--Colord);
+    border-radius: 12px;
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+}
+
+input[type=text], [type=password]{
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    width: 75%;
+}
+
+button{
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    width: 130px;
+}
+
+.btnLogIn{
+    background-color: var(--ColorLinkb);
+}
+
+.btnReset{
+    background-color: var(--ColorLinkr);
+}
+
+footer {
+    text-align: center;
+    background-color: var(--Colore);
+    border-top: 2px solid var(--Colord);
+    padding: 20px;
+    width: 1024px;
+    bottom: 0;
+    box-sizing: border-box;
+}
