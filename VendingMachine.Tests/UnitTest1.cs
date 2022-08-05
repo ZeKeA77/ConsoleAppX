@@ -31,9 +31,8 @@ namespace VendingMachine
             // — Act
             coinbox.MoneyDeposited(100);
 
-
             // Simulate buying Cola
-            util.DecreaseSaldo(15);
+            coinbox.AvailableFunds -= util.ProductList[0].Price;
 
             // — Assert
             Assert.Equal(expValue, coinbox.AvailableFunds);
