@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VendingMachine
+﻿namespace VendingMachine
 {
     public class CoinBox
     {
@@ -13,7 +7,7 @@ namespace VendingMachine
 
         public void MoneyDeposited(int fundsDeposited)
         {
-            
+
             switch (fundsDeposited)
             {
                 case (1):
@@ -50,7 +44,6 @@ namespace VendingMachine
 
         public void FundsToReturn()
         {
-
             int count1000;
             int count500;
             int count100;

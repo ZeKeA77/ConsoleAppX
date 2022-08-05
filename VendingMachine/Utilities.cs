@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VendingMachine
-{      
+﻿namespace VendingMachine
+{
     public class Utilities
     {
         CoinBox coinbox = new CoinBox();
@@ -23,7 +17,7 @@ namespace VendingMachine
         {
             menu.MenuChoice("Start");
             ShowListOfProducts();
-            
+
             Boolean keepAlive = false;
 
             while (!keepAlive)
@@ -171,7 +165,7 @@ namespace VendingMachine
                 }
             }
 
-            
+
         }
 
         public void WhatToDo(int itemId, string itemCat)
@@ -262,7 +256,7 @@ namespace VendingMachine
                     Console.ResetColor();
                     Console.Write($"\t -> Pris: {item.Price}:-\n");
                 }
-                else if(item.Cat == "Candie")
+                else if (item.Cat == "Candie")
                 {
                     Console.Write($"\t\t({item.Id}) |");
                     Console.ForegroundColor = ConsoleColor.Yellow;
@@ -278,8 +272,6 @@ namespace VendingMachine
                     Console.ResetColor();
                     Console.Write($"\t -> Pris: {item.Price}:-\n");
                 }
-
-                
             }
         }
     }

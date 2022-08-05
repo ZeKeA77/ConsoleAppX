@@ -1,5 +1,3 @@
-using static VendingMachine.CoinBox;
-
 namespace VendingMachine
 {
 
