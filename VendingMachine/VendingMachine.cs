@@ -1,7 +1,8 @@
 ﻿namespace VendingMachine
 {
-    public class VendingMachine
+    public class VendingMachine : IVending
     {
+
         CoinBox coinbox = new CoinBox();
         Menu menu = new Menu();
 
@@ -13,10 +14,125 @@
             CreateProductList();
         }
 
+        public void Purchase()
+        {
+            int buyP = int.Parse(Console.ReadLine());
+
+            foreach (var item in ProductList)
+            {
+                if (buyP == item.Id)
+                {
+                    if (item.Price >= coinbox.AvailableFunds)
+                    {
+                        menu.MenuChoice("Vending");
+                        menu.MenuChoice("InsufficientCoins");
+                        menu.MenuChoice("Spacer");
+                    }
+                    else
+                    {
+                        int x = coinbox.AvailableFunds - item.Price;
+                        Console.Clear();
+                        menu.MenuChoice("Vending");
+                        Console.WriteLine($"\t\tTack för att du köpte en {item.Name}");
+                        Console.WriteLine($"\t\tDu har {x}:- kvar");
+                        menu.MenuChoice("Spacer");
+                        coinbox.AvailableFunds -= item.Price;
+
+                        WhatToDo(item.Id, item.Cat);
+                        break;
+                    }
+                }
+            }
+        }
+
+        public void ShowAll()
+        {
+            foreach (var item in ProductList)
+            {
+                if (item.Cat == "Drink")
+                {
+                    Console.Write($"\t\t({item.Id}) |");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write($" {item.Name}");
+                    Console.ResetColor();
+                    Console.Write($"\t -> Pris: {item.Price}:-\n");
+                }
+                else if (item.Cat == "Candie")
+                {
+                    Console.Write($"\t\t({item.Id}) |");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write($" {item.Name}");
+                    Console.ResetColor();
+                    Console.Write($"\t -> Pris: {item.Price}:-\n");
+                }
+                else
+                {
+                    Console.Write($"\t\t({item.Id}) |");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write($" {item.Name}");
+                    Console.ResetColor();
+                    Console.Write($"\t -> Pris: {item.Price}:-\n");
+                }
+            }
+
+        }
+
+        public void InsertMoney()
+        {
+            Boolean noMoreCoins = false;
+            while (!noMoreCoins)
+            {
+                char money;
+                do
+                {
+                    Console.Clear();
+                    menu.MenuChoice("Vending");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine($"\n\t\tTillgängligt belopp: {coinbox.AvailableFunds}:-");
+                    Console.ResetColor();
+                    menu.MenuChoice("KeepInsertingCoin");
+                    money = Convert.ToChar(Console.ReadLine());
+                }
+                while (money != 'n' && money != 'j');
+
+                switch (money)
+                {
+                    case 'n':
+                        noMoreCoins = true;
+                        break;
+                    case 'j':
+                        menu.MenuChoice("InsertCoin");
+                        coinbox.MoneyDeposited(Convert.ToInt32(Console.ReadLine()));
+                        break;
+                    default:
+                        Console.WriteLine("hej");
+                        break;
+                }
+            }
+        }
+
+        public void EndTransaction()
+        {
+            menu.MenuChoice("ShotDown");
+
+            if (coinbox.AvailableFunds > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                coinbox.FundsToReturn();
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\t\tInga pengar i retur");
+                Console.ResetColor();
+            }
+        }
+
         public void StartTheMachine()
         {
             menu.MenuChoice("Start");
-            ShowListOfProducts();
+            ShowAll();
 
             Boolean keepAlive = false;
 
@@ -45,46 +161,20 @@
                         {
                             Console.Clear();
                             menu.MenuChoice("Vending");
-                            ShowListOfProducts();
+                            ShowAll();
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.WriteLine($"\n\t\tTillgängligt belopp: {coinbox.AvailableFunds}:-");
                             Console.ResetColor();
                             menu.MenuChoice("ChooseToBuy");
 
-                            int buyP = int.Parse(Console.ReadLine());
-
-                            foreach (var item in ProductList)
-                            {
-                                if (buyP == item.Id)
-                                {
-                                    if (item.Price >= coinbox.AvailableFunds)
-                                    {
-                                        menu.MenuChoice("Vending");
-                                        menu.MenuChoice("InsufficientCoins");
-                                        menu.MenuChoice("Spacer");
-                                    }
-                                    else
-                                    {
-                                        int x = coinbox.AvailableFunds - item.Price;
-                                        Console.Clear();
-                                        menu.MenuChoice("Vending");
-                                        Console.WriteLine($"\t\tTack för att du köpte en {item.Name}");
-                                        Console.WriteLine($"\t\tDu har {x}:- kvar");
-                                        menu.MenuChoice("Spacer");
-                                        coinbox.AvailableFunds -= item.Price;
-
-                                        WhatToDo(item.Id, item.Cat);
-                                        break;
-                                    }
-                                }
-                            }
+                            Purchase();
                         }
 
                         break;
                     case 'b': // -- Product description
                         Console.Clear();
                         menu.MenuChoice("Vending");
-                        ShowListOfProducts();
+                        ShowAll();
                         menu.MenuChoice("Explain");
 
                         int val = int.Parse(Console.ReadLine());
@@ -108,55 +198,11 @@
                         break;
                     case 'p': // -- Insert coin
 
-                        Boolean noMoreCoins = false;
-                        while (!noMoreCoins)
-                        {
-                            char money;
-                            do
-                            {
-                                Console.Clear();
-                                menu.MenuChoice("Vending");
-                                Console.ForegroundColor = ConsoleColor.Blue;
-                                Console.WriteLine($"\n\t\tTillgängligt belopp: {coinbox.AvailableFunds}:-");
-                                Console.ResetColor();
-                                menu.MenuChoice("KeepInsertingCoin");
-                                money = Convert.ToChar(Console.ReadLine());
-                            }
-                            while (money != 'n' && money != 'j');
-
-                            switch (money)
-                            {
-                                case 'n':
-                                    noMoreCoins = true;
-                                    break;
-                                case 'j':
-                                    menu.MenuChoice("InsertCoin");
-                                    coinbox.MoneyDeposited(Convert.ToInt32(Console.ReadLine()));
-                                    break;
-                                default:
-                                    Console.WriteLine("hej");
-                                    break;
-                            }
-
-
-                        }
+                        InsertMoney();
 
                         break;
                     case 'a': // -- Exit
-                        menu.MenuChoice("ShotDown");
-
-                        if (coinbox.AvailableFunds > 0)
-                        {
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            coinbox.FundsToReturn();
-                            Console.ResetColor();
-                        }
-                        else
-                        {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("\t\tInga pengar i retur");
-                            Console.ResetColor();
-                        }
+                        EndTransaction();
                         keepAlive = true;
                         break;
                     default:
@@ -239,35 +285,8 @@
 
         }
 
-        public void ShowListOfProducts()
-        {
-            foreach (var item in ProductList)
-            {
-                if (item.Cat == "Drink")
-                {
-                    Console.Write($"\t\t({item.Id}) |");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write($" {item.Name}");
-                    Console.ResetColor();
-                    Console.Write($"\t -> Pris: {item.Price}:-\n");
-                }
-                else if (item.Cat == "Candie")
-                {
-                    Console.Write($"\t\t({item.Id}) |");
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write($" {item.Name}");
-                    Console.ResetColor();
-                    Console.Write($"\t -> Pris: {item.Price}:-\n");
-                }
-                else
-                {
-                    Console.Write($"\t\t({item.Id}) |");
-                    Console.ForegroundColor = ConsoleColor.Magenta;
-                    Console.Write($" {item.Name}");
-                    Console.ResetColor();
-                    Console.Write($"\t -> Pris: {item.Price}:-\n");
-                }
-            }
-        }
+
+
+
     }
 }
