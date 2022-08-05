@@ -20,52 +20,33 @@ namespace ConsoleAppXTests
         public void Test_Add_Arr()
         {
             int[] inputA = { 1, 2, 5, 6, 7 };
-            var numA = 0;
-            var expValue = 0;
-            var numB = 5;
-
-            foreach (int i in inputA)
-            {
-                numA = i;
-                expValue = i + numB;
-            }
 
 
-            var getTestResult = Add(numA, numB);
+            var getTestResult = Add(inputA);
 
-            Assert.Equal(expValue, getTestResult);
+            Assert.Equal(21, getTestResult);
         }
 
         [Fact]
-        public void Test_Subtract()
+        public void Test_Substract()
         {
             var numA = 5;
             var numB = 4;
             var expValue = 1;
 
-            var getTestResult = Subtract(numA, numB);
+            var getTestResult = Substract(numA, numB);
 
             Assert.Equal(expValue, getTestResult);
         }
 
         [Fact]
-        public void Test_Subtract_Arr()
+        public void Test_Substract_Arr()
         {
             int[] inputA = { 6, 7, 9 };
-            var numA = 0;
-            var expValue = 2;
-            var numB = 5;
 
-            foreach (int i in inputA)
-            {
-                numA = i;
-                expValue = i - numB;
-            }
+            var getTestResult = Substract(inputA);
 
-
-            var getTestResult = Subtract(numA, numB);
-
-            Assert.Equal(expValue, getTestResult);
+            Assert.Equal(-22, getTestResult);
         }
 
         [Fact]

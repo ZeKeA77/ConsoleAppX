@@ -8,9 +8,14 @@
 
         }
 
-        public override void ProductDetails()
+        public override void Examine()
         {
             Console.WriteLine("\t\tBeskrivning: Kolsyrad - Läskedryck");
+        }
+
+        public override void Use()
+        {
+            Console.Write("\t\tVill du dricka den nu? (j/n) ");
         }
 
 

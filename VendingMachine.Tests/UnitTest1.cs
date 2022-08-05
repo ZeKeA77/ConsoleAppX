@@ -5,7 +5,7 @@ namespace VendingMachine
     {
 
         CoinBox coinbox = new CoinBox();
-        Utilities util = new Utilities();
+        VendingMachine util = new VendingMachine();
 
         [Fact]
         public void DepositMoneyTest()
@@ -25,10 +25,9 @@ namespace VendingMachine
         public void CreateRemoveProductsList()
         {
             // — Arrange
-            int expValue = 16;
+            int expValue = 7;
 
             // — Act
-            util.CreateProductList();
             util.RemoveFromProductList(4);
             util.RemoveFromProductList(2);
 

@@ -29,49 +29,62 @@ while (true)
             Console.Clear();
             Console.Write("\n\n\t\tDu valde addition:\n\n");
 
-            Console.Write("\n\t\tAddera:\t");
+            Console.Write("\n\t\tAnge dina tal, ange mellanslag för att separera:\t");
 
             string tt = Console.ReadLine();
-            string[] ttNum = tt.Split(",");
+            string[] ttNum = tt.Split(" ");
             List<int> nums = new List<int>();
             int numx = 0;
-
-            Console.Write("\n\t\tMed:\t");
-            numB = Convert.ToInt32(Console.ReadLine());
 
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             foreach (string s in ttNum)
             {
                 if (Int32.TryParse(s, out numx))
                     nums.Add(numx);
-                Console.WriteLine($"\n\t\t\t{numx} plus {numB} blir: {Add(numx, numB)}\n");
+                //Console.WriteLine($"\n\t\t\t{numx} plus {numB} blir: {Add(numx, numB)}\n");
             }
             Console.ForegroundColor = ConsoleColor.Gray;
 
+            if (nums.Count > 0 && nums.Count <= 2)
+            {
+                Console.WriteLine($"\n\t\t\t{Add(nums[0], nums[1])}");
+            }
+            else
+            {
+                Console.WriteLine($"\n\t\t\t{Add(nums.ToArray())}");
+            }
             break;
 
         case 2: // Substrahera
 
             Console.Clear();
             Console.Write("\n\n\t\tDu valde substraktion:\n\n");
-            Console.Write("\n\t\tSubstrahera:\t");
+            Console.Write("\n\t\tAnge dina tal, ange mellanslag för att separera:\t");
 
             string ttx = Console.ReadLine();
-            string[] ttNumb = ttx.Split(",");
+            string[] ttNumb = ttx.Split(" ");
             List<int> numsb = new List<int>();
             int numxb = 0;
-
-            Console.Write("\n\t\tMed:\t");
-            numB = Convert.ToInt32(Console.ReadLine());
 
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             foreach (string s in ttNumb)
             {
                 if (Int32.TryParse(s, out numxb))
+                {
                     numsb.Add(numxb);
-                Console.WriteLine($"\n\t\t\t{numxb} minus {numB} blir: {Subtract(numxb, numB)}\n");
+                }
+                //Console.WriteLine($"\n\t\t\t{numxb} minus {numB} blir: {Subtract(numxb, numB)}\n");
             }
             Console.ForegroundColor = ConsoleColor.Gray;
+
+            if (numsb.Count > 0 && numsb.Count <= 2)
+            {
+                Console.WriteLine($"\n\t\t\t{Substract(numsb[0], numsb[1])}");
+            }
+            else
+            {
+                Console.WriteLine($"\n\t\t\t{Substract(numsb.ToArray())}");
+            }
 
             break;
 

@@ -1,6 +1,6 @@
 ﻿using VendingMachine;
 
-Utilities vMachine = new Utilities();
+VendingMachine.VendingMachine vMachine = new VendingMachine.VendingMachine();
 
 vMachine.StartTheMachine();
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Calc
+﻿namespace Calc
 {
     public class Utilities
     {
@@ -21,15 +15,35 @@ namespace Calc
         }
         public static int Add(int numA, int numB)
         {
-
             int result = numA + numB;
             return result;
         }
 
-        public static int Subtract(int numA, int numB)
+        public static int Add(int[] arr)
+        {
+            int sum = 0;
+            foreach (int i in arr)
+            {
+                sum += i;
+
+            }
+            return sum;
+        }
+
+        public static int Substract(int numA, int numB)
         {
             int result = numA - numB;
             return result;
+        }
+
+        public static int Substract(int[] arr)
+        {
+            int sum = 0;
+            foreach (int i in arr)
+            {
+                sum -= i;
+            }
+            return sum;
         }
 
         public static int Divide(double numA, double numB)

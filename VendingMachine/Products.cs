@@ -1,6 +1,6 @@
 ﻿namespace VendingMachine
 {
-    public class Products
+    public abstract class Products
     {
         public string Cat { get; set; }
         public string Name { get; set; }
@@ -19,7 +19,12 @@
             Id = _id;
         }
 
-        public virtual void ProductDetails()
+        public virtual void Examine()
+        {
+
+        }
+
+        public virtual void Use()
         {
 
         }

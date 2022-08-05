@@ -1,13 +1,13 @@
 ﻿namespace VendingMachine
 {
-    public class Utilities
+    public class VendingMachine
     {
         CoinBox coinbox = new CoinBox();
         Menu menu = new Menu();
 
         public List<Products> ProductList { get; set; }
 
-        public Utilities()
+        public VendingMachine()
         {
             ProductList = new List<Products>();
             CreateProductList();
@@ -98,7 +98,7 @@
                                 Console.WriteLine($"\t\tNamn: {item.Name}");
                                 Console.WriteLine($"\t\tKategori: {item.Cat}");
                                 Console.WriteLine($"\t\tSmak: {item.Taste}");
-                                item.ProductDetails();
+                                item.Examine();
                                 Console.WriteLine($"\t\tPris: {item.Price}");
                                 Console.ResetColor();
                                 menu.MenuChoice("Spacer");
@@ -175,17 +175,12 @@
             Console.ForegroundColor = ConsoleColor.Blue;
             do
             {
-                if (itemCat == "Drink")
+                foreach (var item in ProductList)
                 {
-                    Console.Write("\t\tVill du dricka den nu? (j/n) ");
-                }
-                else if (itemCat == "Candie")
-                {
-                    Console.Write("\t\tVill du äta dina godisar nu? (j/n) ");
-                }
-                else if (itemCat == "Cookie")
-                {
-                    Console.Write("\t\tVill du äta dina kex nu? (j/n) ");
+                    if (itemId == item.Id)
+                    {
+                        item.Use();
+                    }
                 }
 
                 choice = Convert.ToChar(Console.ReadLine());

@@ -7,9 +7,14 @@
 
         }
 
-        public override void ProductDetails()
+        public override void Examine()
         {
             Console.WriteLine("\t\tBeskrivning: Kex - Kan innehålla nötter");
+        }
+
+        public override void Use()
+        {
+            Console.Write("\t\tVill du äta dina kex nu? (j/n) ");
         }
 
     }
