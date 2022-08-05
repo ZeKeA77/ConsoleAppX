@@ -4,12 +4,11 @@ namespace VendingMachine
     public class UnitTest1
     {
 
-        CoinBox coinbox = new CoinBox();
-        VendingMachine util = new VendingMachine();
-
         [Fact]
         public void DepositMoneyTest()
         {
+            VendingMachine util = new VendingMachine();
+            CoinBox coinbox = new CoinBox();
             // — Arrange
             int expValue = 150;
 
@@ -22,8 +21,28 @@ namespace VendingMachine
         }
 
         [Fact]
+        public void ExtractMoneyTest()
+        {
+            VendingMachine util = new VendingMachine();
+            CoinBox coinbox = new CoinBox();
+            // — Arrange
+            int expValue = 85;
+
+            // — Act
+            coinbox.MoneyDeposited(100);
+
+
+            // Simulate buying Cola
+            util.DecreaseSaldo(15);
+
+            // — Assert
+            Assert.Equal(expValue, coinbox.AvailableFunds);
+        }
+
+        [Fact]
         public void CreateRemoveProductsList()
         {
+            VendingMachine util = new VendingMachine();
             // — Arrange
             int expValue = 7;
 
@@ -39,6 +58,7 @@ namespace VendingMachine
         [Fact]
         public void CreateProduct()
         {
+            VendingMachine util = new VendingMachine();
             // — Arrange
             int expValue = 10;
 

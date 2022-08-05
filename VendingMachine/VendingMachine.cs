@@ -22,7 +22,7 @@
             {
                 if (buyP == item.Id)
                 {
-                    if (item.Price >= coinbox.AvailableFunds)
+                    if (item.Price > coinbox.AvailableFunds)
                     {
                         menu.MenuChoice("Vending");
                         menu.MenuChoice("InsufficientCoins");
@@ -36,14 +36,23 @@
                         Console.WriteLine($"\t\tTack för att du köpte en {item.Name}");
                         Console.WriteLine($"\t\tDu har {x}:- kvar");
                         menu.MenuChoice("Spacer");
-                        coinbox.AvailableFunds -= item.Price;
-
+                        //coinbox.AvailableFunds -= item.Price;
+                        DecreaseSaldo(item.Price);
                         WhatToDo(item.Id, item.Cat);
                         break;
                     }
                 }
             }
         }
+
+        public void DecreaseSaldo(int price)
+        {
+
+            coinbox.AvailableFunds -= price;
+
+
+        }
+
 
         public void ShowAll()
         {
@@ -257,30 +266,18 @@
 
         public void CreateProductList()
         {
-            Drinks drink1 = new Drinks("Drink", "CocaCola", "Smakar cola", 15);
-            Drinks drink2 = new Drinks("Drink", "Fanta", "Smakar apelsin", 12);
-            Drinks drink3 = new Drinks("Drink", "Zingo", "Smakar jordgubbar", 10);
 
-            Candies candie1 = new Candies("Candie", "Bilar", "Blandade smaker", 25);
-            Candies candie2 = new Candies("Candie", "Toppar", "Blandat jordgubb/lakrits", 23);
-            Candies candie3 = new Candies("Candie", "Bridge", "Blandade smaker", 30);
+            ProductList.Add(new Drinks("Drink", "CocaCola", "Smakar cola", 15));
+            ProductList.Add(new Drinks("Drink", "Fanta", "Smakar apelsin", 12));
+            ProductList.Add(new Drinks("Drink", "Zingo", "Smakar jordgubbar", 10));
 
-            Cookies cookie1 = new Cookies("Cookie", "Oreo", "Chokladsmak", 45);
-            Cookies cookie2 = new Cookies("Cookie", "Singoalla", "Hallonsmak", 50);
-            Cookies cookie3 = new Cookies("Cookie", "Marie", "Vaniljsmak", 22);
+            ProductList.Add(new Candies("Candie", "Bilar", "Blandade smaker", 25));
+            ProductList.Add(new Candies("Candie", "Toppar", "Blandat jordgubb/lakrits", 23));
+            ProductList.Add(new Candies("Candie", "Bridge", "Blandade smaker", 30));
 
-
-            ProductList.Add(drink1);
-            ProductList.Add(drink2);
-            ProductList.Add(drink3);
-
-            ProductList.Add(candie1);
-            ProductList.Add(candie2);
-            ProductList.Add(candie3);
-
-            ProductList.Add(cookie1);
-            ProductList.Add(cookie2);
-            ProductList.Add(cookie3);
+            ProductList.Add(new Cookies("Cookie", "Oreo", "Chokladsmak", 45));
+            ProductList.Add(new Cookies("Cookie", "Singoalla", "Hallonsmak", 50));
+            ProductList.Add(new Cookies("Cookie", "Marie", "Vaniljsmak", 22));
 
 
         }

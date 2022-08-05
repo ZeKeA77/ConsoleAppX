@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine", "VendingMa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{99BF1AF9-9A28-4EF9-8835-D74A33F85B4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.Tests", "VendingMachine.Tests\VendingMachine.Tests.csproj", "{19D9CE0C-B9CC-4EE0-9B26-2BB20E04E80A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine.Tests", "VendingMachine.Tests\VendingMachine.Tests.csproj", "{19D9CE0C-B9CC-4EE0-9B26-2BB20E04E80A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front-End", "Front-End", "{F61584F8-00F1-4D9A-9FC5-BF18EF82D585}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
